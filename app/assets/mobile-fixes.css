@@ -1,0 +1,379 @@
+/* Mobile UI Fixes for KeyAuth Dashboard */
+
+/* Navigation Color Improvements - All Devices */
+nav {
+  background: linear-gradient(135deg, #0f0f17 0%, #1a1a24 100%) !important;
+  border-bottom: 1px solid rgba(96, 165, 250, 0.3) !important;
+}
+
+/* Sidebar Navigation Colors */
+#sidebar {
+  background: linear-gradient(180deg, #0f0f17 0%, #1a1a24 50%, #0f0f17 100%) !important;
+  border-right: 1px solid rgba(96, 165, 250, 0.3) !important;
+}
+
+/* Navigation Links */
+#sidebar a {
+  color: #e5e7eb !important;
+  transition: all 0.3s ease !important;
+}
+
+#sidebar a:hover {
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2)) !important;
+  color: #ffffff !important;
+  transform: translateX(4px);
+}
+
+#sidebar a.active,
+#sidebar a[aria-current="page"] {
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.3), rgba(147, 51, 234, 0.3)) !important;
+  color: #ffffff !important;
+  border-left: 3px solid #3b82f6 !important;
+}
+
+/* Tab Navigation Colors */
+button[role="tab"] {
+  color: #9ca3af !important;
+  border-bottom-color: transparent !important;
+  transition: all 0.3s ease !important;
+}
+
+button[role="tab"]:hover {
+  color: #e5e7eb !important;
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.15), rgba(147, 51, 234, 0.15)) !important;
+}
+
+button[role="tab"][aria-selected="true"] {
+  color: #ffffff !important;
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.25), rgba(147, 51, 234, 0.25)) !important;
+  border-bottom: 2px solid #3b82f6 !important;
+}
+
+/* Navigation Icons */
+#sidebar i {
+  color: #60a5fa !important;
+  transition: all 0.3s ease !important;
+}
+
+#sidebar a:hover i {
+  color: #93c5fd !important;
+  transform: scale(1.1);
+}
+
+/* Breadcrumb styling */
+nav[aria-label="Breadcrumb"] a {
+  color: #60a5fa !important;
+}
+
+nav[aria-label="Breadcrumb"] a:hover {
+  color: #93c5fd !important;
+  text-decoration: underline !important;
+}
+
+/* Dropdown menu colors */
+#dropdown {
+  background: linear-gradient(135deg, #0f0f17 0%, #1a1a24 100%) !important;
+  border: 1px solid rgba(59, 130, 246, 0.4) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+}
+
+#dropdown a {
+  color: #d1d5db !important;
+}
+
+#dropdown a:hover {
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.25), rgba(147, 51, 234, 0.25)) !important;
+  color: #ffffff !important;
+}
+
+/* Mobile Navigation Button */
+#toggleSidebarMobile {
+  color: #ffffff !important;
+  background: rgba(59, 130, 246, 0.1) !important;
+  border: 1px solid rgba(59, 130, 246, 0.3) !important;
+}
+
+#toggleSidebarMobile:hover {
+  background: rgba(59, 130, 246, 0.2) !important;
+  border-color: rgba(59, 130, 246, 0.5) !important;
+}
+
+/* Top Navigation Height Reduction - All Devices */
+nav.fixed {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+nav .py-3 {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+/* Mobile Logo Size Reduction */
+@media (max-width: 768px) {
+  /* Reduce KeyAuth logo size on mobile */
+  nav img[alt="GenZ Auth"],
+  nav img[src*="KeyauthBanner"] {
+    max-width: 50px !important;
+    height: auto !important;
+  }
+  
+  /* Compact navigation on mobile */
+  nav.fixed {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+    min-height: auto !important;
+  }
+  
+  nav .py-3 {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+  }
+  
+  /* Reduce top padding for main content */
+  .pt-16 {
+    padding-top: 3rem !important;
+  }
+  
+  /* Reduce hamburger menu button size */
+  #toggleSidebarMobile {
+    padding: 0.4rem !important;
+  }
+  
+  #toggleSidebarMobile svg {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+  }
+}
+
+/* Extra small devices - even more compact */
+@media (max-width: 480px) {
+  nav img[alt="GenZ Auth"],
+  nav img[src*="KeyauthBanner"] {
+    max-width: 45px !important;
+  }
+  
+  nav.fixed {
+    padding: 0.2rem 0.5rem !important;
+  }
+  
+  .pt-16 {
+    padding-top: 2.75rem !important;
+  }
+}
+
+/* Ensure all buttons and interactive elements work */
+button, a, [data-modal-toggle], [data-modal-target] {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+/* Application Credentials Section - Mobile Optimization */
+@media (max-width: 768px) {
+  /* Credentials container improvements */
+  .mb-8.p-6 {
+    padding: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* Ensure buttons work on mobile */
+  button, a {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+  }
+  
+  /* Grid layout fixes for credentials */
+  .grid.grid-cols-1.md\:grid-cols-3 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+  
+  /* Credential boxes */
+  .grid.grid-cols-1.md\:grid-cols-3 > div {
+    padding: 0.75rem !important;
+    width: 100% !important;
+  }
+  
+  /* Application secret display */
+  .flex.items-center.justify-between {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+  }
+  
+  .flex.items-center.justify-between code {
+    width: 100%;
+    word-break: break-all;
+    font-size: 0.7rem !important;
+    padding-right: 0 !important;
+  }
+  
+  .flex.items-center.justify-between button {
+    width: 100%;
+    justify-content: center;
+    margin-left: 0 !important;
+  }
+  
+  /* Button group improvements */
+  .flex.flex-wrap.gap-3 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+  
+  .flex.flex-wrap.gap-3 button {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  
+  /* Header section improvements */
+  .flex.items-center.justify-between.mb-6 {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+  }
+  
+  .flex.items-center.justify-between.mb-6 button {
+    width: 100% !important;
+  }
+  
+  /* Table improvements */
+  .modern-table,
+  .w-full.text-sm {
+    font-size: 0.75rem !important;
+  }
+  
+  .modern-table th,
+  .w-full.text-sm th {
+    padding: 0.5rem !important;
+    font-size: 0.7rem !important;
+  }
+  
+  .modern-table td,
+  .w-full.text-sm td {
+    padding: 0.5rem !important;
+    font-size: 0.75rem !important;
+  }
+  
+  /* Icon improvements */
+  .w-10.h-10 {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+  
+  .w-10.h-10 i {
+    font-size: 0.9rem !important;
+  }
+  
+  /* Text gradient fixes */
+  .text-3xl {
+    font-size: 1.25rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  .text-xl {
+    font-size: 1.1rem !important;
+    line-height: 1.3 !important;
+  }
+  
+  /* Blur effect on hover - make it always visible on mobile */
+  .blur-sm {
+    filter: blur(0) !important;
+  }
+  
+  /* Card header improvements */
+  .modern-card-header {
+    padding: 1rem !important;
+  }
+  
+  /* Main content padding */
+  .p-4.bg-\[#09090d\] {
+    padding: 0.75rem !important;
+  }
+  
+  /* Sidebar improvements for mobile */
+  #sidebar {
+    width: 16rem !important;
+  }
+  
+  /* Modal improvements */
+  .modal-content-modern {
+    margin: 1rem !important;
+    max-width: calc(100% - 2rem) !important;
+  }
+}
+
+/* Extra small devices (phones in portrait) */
+@media (max-width: 480px) {
+  /* Further reduce text sizes */
+  .text-3xl {
+    font-size: 1.1rem !important;
+  }
+  
+  .text-xl {
+    font-size: 1rem !important;
+  }
+  
+  .text-sm {
+    font-size: 0.7rem !important;
+  }
+  
+  .text-xs {
+    font-size: 0.65rem !important;
+  }
+  
+  /* Tighter spacing */
+  .p-4 {
+    padding: 0.5rem !important;
+  }
+  
+  .p-6 {
+    padding: 0.75rem !important;
+  }
+  
+  /* Smaller buttons */
+  button {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.7rem !important;
+  }
+  
+  /* Smaller icons */
+  i {
+    font-size: 0.9rem !important;
+  }
+  
+  /* Code blocks */
+  code {
+    font-size: 0.65rem !important;
+  }
+  
+  /* Table improvements */
+  .modern-table th,
+  .w-full.text-sm th {
+    padding: 0.4rem !important;
+    font-size: 0.65rem !important;
+  }
+  
+  .modern-table td,
+  .w-full.text-sm td {
+    padding: 0.4rem !important;
+    font-size: 0.7rem !important;
+  }
+}
+
+/* Landscape mobile improvements */
+@media (max-width: 768px) and (orientation: landscape) {
+  .p-4.bg-\[#09090d\] {
+    padding: 0.5rem !important;
+  }
+  
+  .mb-8 {
+    margin-bottom: 1rem !important;
+  }
+  
+  .mb-6 {
+    margin-bottom: 0.75rem !important;
+  }
+}

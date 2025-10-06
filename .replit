@@ -1,0 +1,71 @@
+modules = ["php-8.2", "web", "php-8.4", "postgresql-16"]
+[agent]
+expertMode = true
+
+[nix]
+channel = "stable-25_05"
+packages = ["redis"]
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "GenZ Auth Server"
+
+[[workflows.workflow]]
+name = "GenZ Auth Server"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "php -S 0.0.0.0:5000 -t ."
+waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[[ports]]
+localPort = 33095
+externalPort = 3002
+
+[[ports]]
+localPort = 36687
+externalPort = 5000
+
+[[ports]]
+localPort = 37047
+externalPort = 4200
+
+[[ports]]
+localPort = 38187
+externalPort = 3003
+
+[[ports]]
+localPort = 39693
+externalPort = 3001
+
+[[ports]]
+localPort = 42491
+externalPort = 3000
+
+[[ports]]
+localPort = 44721
+externalPort = 6000
+
+[[ports]]
+localPort = 44927
+externalPort = 5173
+
+[deployment]
+deploymentTarget = "autoscale"
+run = ["php", "-S", "0.0.0.0:5000", "-t"]
