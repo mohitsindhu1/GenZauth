@@ -1,7 +1,5 @@
 #!/bin/sh
 
-echo "Starting GenZ Auth Server..."
+echo "Starting GenZ Auth Server with Supervisord..."
 
-php-fpm -D
-
-nginx -g 'daemon off;'
+exec /usr/bin/supervisord -c /etc/supervisord.conf
