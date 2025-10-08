@@ -7,6 +7,7 @@ NOTE: change this file name from credentials.example.php to credentials.php
 
 error_reporting(0);
 
+// Database credentials
 $databaseHost = "us9.endercloud.in";
 $databaseUsername = "mohitauth";
 $databasePassword = "helloo123";
@@ -33,3 +34,6 @@ $adminwebhookun = "KeyAuth Admin Logs"; // admin webhook's username
 $awsAccessKey = ""; // used for AWS SES to send emails
 
 $awsSecretKey = ""; // used for AWS SES to send emails
+
+$googleClientId = "";
+$googleClientSecret = "";
