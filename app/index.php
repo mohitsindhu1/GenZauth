@@ -57,7 +57,7 @@ if (in_array($role, array("developer", "seller"))) {
 }
 
 
-if (empty($_SESSION['app'])) // no app selected yet
+if (empty($_SESSION['app']) && $role !== 'owner') // no app selected yet (owners don't need app selected)
 {
     $query = misc\mysql\query("SELECT `secret`, `name`, `banned`, `sellerkey` FROM `apps` WHERE `owner` = ? AND `ownerid` = ?",[$_SESSION['username'], $_SESSION['ownerid']]); // select all apps where owner is current user
     if ($query->num_rows == 1) // if the user only owns one app, load that app (they can still change app after it's loaded)
