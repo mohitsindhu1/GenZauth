@@ -54,8 +54,9 @@ try {
     $existingUser = $result->fetch_assoc();
     
     if (!$existingUser) {
+        $emailHash = sha1($email);
         $stmt = $conn->prepare("SELECT * FROM accounts WHERE email = ?");
-        $stmt->bind_param("s", $email);
+        $stmt->bind_param("s", $emailHash);
         $stmt->execute();
         $result = $stmt->get_result();
         
